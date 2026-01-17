@@ -17,12 +17,17 @@
       color: #0f172a;
     }
 
-    .wrap { min-height: 100vh; padding: 14px; display: flex; }
+    .wrap {
+      min-height: 100vh;
+      padding: 14px;
+      display: flex;
+    }
+
     .card {
       width: 100%;
       max-width: 720px;
       margin: 0 auto;
-      background: #fff;
+      background: #ffffff;
       border-radius: 18px;
       box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
       overflow: hidden;
@@ -39,7 +44,11 @@
       gap: 10px;
     }
 
-    .brand { font-weight: 800; font-size: 16px; }
+    .brand {
+      font-weight: 800;
+      font-size: 16px;
+    }
+
     .badge {
       font-size: 12px;
       padding: 6px 10px;
@@ -50,62 +59,80 @@
       white-space: nowrap;
     }
 
-    .content { padding: 16px; display: grid; gap: 12px; }
-    .title { font-size: 20px; font-weight: 900; line-height: 1.2; margin: 0; }
-    .subtitle { margin: 0; opacity: .75; }
+    .content {
+      padding: 16px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .subtitle {
+      margin: 0;
+      opacity: 0.75;
+      font-size: 14px;
+    }
 
     .howto {
       background: #f8fafc;
       border: 1px solid rgba(15, 23, 42, 0.08);
       border-radius: 14px;
-      padding: 12px 12px;
+      padding: 14px;
       display: grid;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .step { display: flex; gap: 10px; align-items: flex-start; }
+    .step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+    }
+
     .dot {
-      width: 26px; height: 26px;
+      width: 26px;
+      height: 26px;
       border-radius: 999px;
-      display: grid; place-items: center;
+      display: grid;
+      place-items: center;
       font-weight: 800;
-      background: rgba(2,132,199,0.12);
-      color: rgb(2,132,199);
+      background: rgba(2, 132, 199, 0.12);
+      color: rgb(2, 132, 199);
       flex: 0 0 auto;
       margin-top: 1px;
     }
 
-    .ctaRow {
-      display: grid;
-      gap: 10px;
-      margin-top: 6px;
+    .callout {
+      background: rgba(15, 23, 42, 0.04);
+      border-left: 4px solid #0f172a;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 1.4;
     }
 
     .cta {
       width: 100%;
       border: 0;
       border-radius: 14px;
-      padding: 14px 14px;
+      padding: 14px;
       font-weight: 800;
       font-size: 15px;
       background: #0f172a;
-      color: #fff;
+      color: #ffffff;
       cursor: pointer;
     }
 
     .hint {
       font-size: 12px;
-      opacity: .7;
-      margin: 0;
+      opacity: 0.7;
       text-align: center;
-    }
-
-    .bullets {
       margin: 0;
-      padding-left: 18px;
-      display: grid;
-      gap: 6px;
-      opacity: .9;
     }
 
     .footer {
@@ -115,12 +142,18 @@
       padding: 10px 12px 14px;
     }
 
-    /* Contenedor requerido por Virtual Scale (aunque sea flotante) */
-    #vs-widget { width: 1px; height: 1px; overflow: hidden; }
+    /* Contenedor requerido por Virtual Scale */
+    #vs-widget {
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
 
-    /* Evitar que el contenido quede pegado al botón flotante */
+    /* Deja espacio visual para la burbuja en móvil */
     @media (max-width: 520px) {
-      .wrap { padding-bottom: 86px; } /* deja espacio visual para la burbuja */
+      .wrap {
+        padding-bottom: 90px;
+      }
     }
   </style>
 </head>
@@ -134,46 +167,61 @@
       </div>
 
       <div class="content">
-        <h1 class="title">Habla con Sofía en 1 clic</h1>
-        <p class="subtitle">Para empezar, toca el botón de chat en la esquina inferior derecha.</p>
+        <h1 class="title">Habla con Sofía en segundos</h1>
+        <p class="subtitle">
+          Sofía puede explicarte cómo funciona la cuponera de viajes,
+          los beneficios, los destinos incluidos y cómo activarla.
+        </p>
 
         <div class="howto">
           <div class="step">
             <div class="dot">1</div>
-            <div><b>Toca el ícono de chat</b> (abajo a la derecha).</div>
+            <div>
+              Toca el <b>botón de chat</b> que aparece en la esquina inferior derecha.
+            </div>
           </div>
           <div class="step">
             <div class="dot">2</div>
-            <div>Elige una pregunta rápida o escribe tu duda.</div>
+            <div>
+              Realiza <b>tu primera pregunta</b> en el chat.
+            </div>
           </div>
           <div class="step">
             <div class="dot">3</div>
-            <div>Sofía te explica beneficios, destinos y cómo activar.</div>
+            <div>
+              Una vez enviada tu pregunta, se habilitará la opción de
+              <b>hablar por teléfono con Sofía</b>.
+            </div>
           </div>
         </div>
 
-        <ul class="bullets">
-          <li>Conoce beneficios y condiciones de la cuponera</li>
-          <li>Consulta destinos incluidos y cómo se usa</li>
-          <li>Resuelve dudas antes de hablar con un asesor</li>
-        </ul>
-
-        <div class="ctaRow">
-          <button class="cta" type="button" onclick="alert('Toca el botón de chat abajo a la derecha para abrir a Sofía 🙂');">
-            Abrir chat
-          </button>
-          <p class="hint">Si no lo ves, espera 2–3 segundos y recarga la página.</p>
+        <div class="callout">
+          📞 <b>Importante:</b>  
+          El botón para mantener una llamada aparece en la parte superior del chat,
+          junto al número de la conversación.  
+          <br><br>
+          Ten en cuenta que el <b>ícono del teléfono es de color oscuro</b> y puede
+          verse discreto, pero está activo una vez que haces tu primera pregunta.
         </div>
+
+        <button class="cta" type="button"
+          onclick="alert('Toca el botón de chat abajo a la derecha. Después de tu primera pregunta, podrás llamar a Sofía desde el ícono de teléfono 📞 en la parte superior del chat.');">
+          Abrir chat
+        </button>
+
+        <p class="hint">
+          Si no ves el botón de chat de inmediato, espera unos segundos o recarga la página.
+        </p>
       </div>
 
-      <div class="footer">© Todos los derechos reservados</div>
+      <div class="footer">
+        © Todos los derechos reservados
+      </div>
     </div>
   </div>
 
-  <!-- Virtual Scale Widget Container -->
+  <!-- Virtual Scale Widget -->
   <div id="vs-widget"></div>
-
-  <!-- Virtual Scale JavaScript -->
   <script defer src="https://cdn.virtualscale.com/dist/widget.js" api-key="696b554c5b8dde8f29457b45"></script>
 </body>
 </html>
