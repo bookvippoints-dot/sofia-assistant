@@ -5,17 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Sofía | Asistente Virtual Saving Pass</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      max-width: 100%;
-    }
+  <!-- Virtual Scale CSS -->
+  <link rel="stylesheet" href="https://cdn.virtualscale.com/dist/widget.css">
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -23,7 +18,6 @@
       color: #0f172a;
     }
 
-    /* Contenedor general */
     .wrap {
       min-height: 100vh;
       display: flex;
@@ -31,7 +25,6 @@
       padding: 12px;
     }
 
-    /* Tarjeta principal */
     .card {
       flex: 1;
       width: 100%;
@@ -45,7 +38,6 @@
       overflow: hidden;
     }
 
-    /* Encabezado */
     .header {
       padding: 14px 16px;
       border-bottom: 1px solid rgba(15, 23, 42, 0.08);
@@ -56,10 +48,7 @@
       flex-shrink: 0;
     }
 
-    .brand {
-      font-weight: 700;
-      font-size: 16px;
-    }
+    .brand { font-weight: 700; font-size: 16px; }
 
     .badge {
       font-size: 12px;
@@ -71,23 +60,21 @@
       white-space: nowrap;
     }
 
-    /* Zona del asistente */
+    /* Zona del asistente: ocupa todo el espacio disponible sin doble scroll */
     .assistant {
       flex: 1;
       width: 100%;
       position: relative;
-      overflow: hidden; /* evita doble scroll */
+      overflow: hidden;
+      min-height: 520px;
     }
 
-    /* Si tu asistente es iframe */
-    .assistant iframe {
+    /* Contenedor del widget */
+    #vs-widget {
       width: 100%;
       height: 100%;
-      border: 0;
-      display: block;
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       font-size: 12px;
@@ -96,15 +83,9 @@
       flex-shrink: 0;
     }
 
-    /* Desktop */
     @media (min-width: 900px) {
-      .wrap {
-        padding: 24px;
-      }
-
-      .header {
-        padding: 16px 20px;
-      }
+      .wrap { padding: 24px; }
+      .header { padding: 16px 20px; }
     }
   </style>
 </head>
@@ -112,41 +93,21 @@
 <body>
   <div class="wrap">
     <div class="card">
-
       <div class="header">
         <div class="brand">Sofía · Saving Pass</div>
         <div class="badge">Asistente Virtual</div>
       </div>
 
       <div class="assistant">
-
-        <!-- =====================================================
-             PEGA AQUÍ EL CÓDIGO DE TU ASISTENTE DE IA
-             
-             OPCIÓN A (RECOMENDADA):
-             Pega aquí el <script> que te da la plataforma del asistente
-
-             OPCIÓN B (si es iframe):
-             Reemplaza la URL por la REAL (no pongas TU_URL)
-        ====================================================== -->
-
-        <!--
-        <iframe
-          src="https://URL-REAL-DEL-ASISTENTE.com"
-          allow="microphone; autoplay; clipboard-read; clipboard-write"
-          loading="lazy">
-        </iframe>
-        -->
-
-        <!-- ===================================================== -->
-
+        <!-- Virtual Scale Widget Container -->
+        <div id="vs-widget"></div>
       </div>
 
-      <div class="footer">
-        © Todos los derechos reservados
-      </div>
-
+      <div class="footer">© Todos los derechos reservados</div>
     </div>
   </div>
+
+  <!-- Virtual Scale JavaScript -->
+  <script defer src="https://cdn.virtualscale.com/dist/widget.js" api-key="696b554c5b8dde8f29457b45"></script>
 </body>
 </html>
