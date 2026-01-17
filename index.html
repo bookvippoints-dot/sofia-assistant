@@ -120,4 +120,60 @@
 
     /* Evitar que el contenido quede pegado al botón flotante */
     @media (max-width: 520px) {
-      .wrap { padding-botto
+      .wrap { padding-bottom: 86px; } /* deja espacio visual para la burbuja */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="top">
+        <div class="brand">Sofía · Saving Pass</div>
+        <div class="badge">Asistente Virtual</div>
+      </div>
+
+      <div class="content">
+        <h1 class="title">Habla con Sofía en 1 clic</h1>
+        <p class="subtitle">Para empezar, toca el botón de chat en la esquina inferior derecha.</p>
+
+        <div class="howto">
+          <div class="step">
+            <div class="dot">1</div>
+            <div><b>Toca el ícono de chat</b> (abajo a la derecha).</div>
+          </div>
+          <div class="step">
+            <div class="dot">2</div>
+            <div>Elige una pregunta rápida o escribe tu duda.</div>
+          </div>
+          <div class="step">
+            <div class="dot">3</div>
+            <div>Sofía te explica beneficios, destinos y cómo activar.</div>
+          </div>
+        </div>
+
+        <ul class="bullets">
+          <li>Conoce beneficios y condiciones de la cuponera</li>
+          <li>Consulta destinos incluidos y cómo se usa</li>
+          <li>Resuelve dudas antes de hablar con un asesor</li>
+        </ul>
+
+        <div class="ctaRow">
+          <button class="cta" type="button" onclick="alert('Toca el botón de chat abajo a la derecha para abrir a Sofía 🙂');">
+            Abrir chat
+          </button>
+          <p class="hint">Si no lo ves, espera 2–3 segundos y recarga la página.</p>
+        </div>
+      </div>
+
+      <div class="footer">© Todos los derechos reservados</div>
+    </div>
+  </div>
+
+  <!-- Virtual Scale Widget Container -->
+  <div id="vs-widget"></div>
+
+  <!-- Virtual Scale JavaScript -->
+  <script defer src="https://cdn.virtualscale.com/dist/widget.js" api-key="696b554c5b8dde8f29457b45"></script>
+</body>
+</html>
