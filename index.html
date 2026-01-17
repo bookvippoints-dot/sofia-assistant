@@ -3,111 +3,121 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Sofía | Asistente Virtual Saving Pass</title>
+  <title>Sofía | Saving Pass</title>
 
   <!-- Virtual Scale CSS -->
   <link rel="stylesheet" href="https://cdn.virtualscale.com/dist/widget.css">
 
   <style>
     * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; padding: 0; }
-
+    html, body { height: 100%; margin: 0; }
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: #f6f7fb;
       color: #0f172a;
     }
 
-    .wrap {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 12px;
-    }
-
+    .wrap { min-height: 100vh; padding: 14px; display: flex; }
     .card {
-      flex: 1;
       width: 100%;
-      max-width: 1000px;
+      max-width: 720px;
       margin: 0 auto;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
 
-    .header {
+    .top {
       padding: 14px 16px;
       border-bottom: 1px solid rgba(15, 23, 42, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      flex-shrink: 0;
     }
 
-    .brand { font-weight: 700; font-size: 16px; }
-
+    .brand { font-weight: 800; font-size: 16px; }
     .badge {
       font-size: 12px;
       padding: 6px 10px;
       border-radius: 999px;
       background: rgba(234, 179, 8, 0.15);
       color: #a16207;
-      font-weight: 600;
+      font-weight: 700;
       white-space: nowrap;
     }
 
-    /* Zona del asistente: ocupa todo el espacio disponible sin doble scroll */
-    .assistant {
-      flex: 1;
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      min-height: 520px;
+    .content { padding: 16px; display: grid; gap: 12px; }
+    .title { font-size: 20px; font-weight: 900; line-height: 1.2; margin: 0; }
+    .subtitle { margin: 0; opacity: .75; }
+
+    .howto {
+      background: #f8fafc;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 14px;
+      padding: 12px 12px;
+      display: grid;
+      gap: 8px;
     }
 
-    /* Contenedor del widget */
-    #vs-widget {
+    .step { display: flex; gap: 10px; align-items: flex-start; }
+    .dot {
+      width: 26px; height: 26px;
+      border-radius: 999px;
+      display: grid; place-items: center;
+      font-weight: 800;
+      background: rgba(2,132,199,0.12);
+      color: rgb(2,132,199);
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .ctaRow {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .cta {
       width: 100%;
-      height: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 14px 14px;
+      font-weight: 800;
+      font-size: 15px;
+      background: #0f172a;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .hint {
+      font-size: 12px;
+      opacity: .7;
+      margin: 0;
+      text-align: center;
+    }
+
+    .bullets {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+      opacity: .9;
     }
 
     .footer {
       text-align: center;
       font-size: 12px;
       opacity: 0.6;
-      padding: 10px;
-      flex-shrink: 0;
+      padding: 10px 12px 14px;
     }
 
-    @media (min-width: 900px) {
-      .wrap { padding: 24px; }
-      .header { padding: 16px 20px; }
-    }
-  </style>
-</head>
+    /* Contenedor requerido por Virtual Scale (aunque sea flotante) */
+    #vs-widget { width: 1px; height: 1px; overflow: hidden; }
 
-<body>
-  <div class="wrap">
-    <div class="card">
-      <div class="header">
-        <div class="brand">Sofía · Saving Pass</div>
-        <div class="badge">Asistente Virtual</div>
-      </div>
-
-      <div class="assistant">
-        <!-- Virtual Scale Widget Container -->
-        <div id="vs-widget"></div>
-      </div>
-
-      <div class="footer">© Todos los derechos reservados</div>
-    </div>
-  </div>
-
-  <!-- Virtual Scale JavaScript -->
-  <script defer src="https://cdn.virtualscale.com/dist/widget.js" api-key="696b554c5b8dde8f29457b45"></script>
-</body>
-</html>
+    /* Evitar que el contenido quede pegado al botón flotante */
+    @media (max-width: 520px) {
+      .wrap { padding-botto
