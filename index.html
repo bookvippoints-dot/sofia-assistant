@@ -149,7 +149,7 @@
       overflow: hidden;
     }
 
-    /* Deja espacio visual para la burbuja en móvil */
+    /* Espacio visual para la burbuja en móvil */
     @media (max-width: 520px) {
       .wrap {
         padding-bottom: 90px;
@@ -196,16 +196,13 @@
         </div>
 
         <div class="callout">
-          📞 <b>Importante:</b>  
+          📞 <b>Importante:</b><br>
           El botón para mantener una llamada aparece en la parte superior del chat,
-          junto al número de la conversación.  
-          <br><br>
-          Ten en cuenta que el <b>ícono del teléfono es de color oscuro</b> y puede
-          verse discreto, pero está activo una vez que haces tu primera pregunta.
+          junto al número de la conversación.
         </div>
 
         <button class="cta" type="button"
-          onclick="alert('Toca el botón de chat abajo a la derecha. Después de tu primera pregunta, podrás llamar a Sofía desde el ícono de teléfono 📞 en la parte superior del chat.');">
+          onclick="alert('Toca el botón en la esquina inferior izquierda');">
           Abrir chat
         </button>
 
@@ -222,6 +219,7 @@
 
   <!-- Virtual Scale Widget -->
   <div id="vs-widget"></div>
-  <script defer src="https://cdn.virtualscale.com/dist/widget.js" api-key="696b554c5b8dde8f29457b45"></script>
+  <script defer src="https://cdn.virtualscale.com/dist/widget.js"
+    api-key="696b554c5b8dde8f29457b45"></script>
 </body>
 </html>
